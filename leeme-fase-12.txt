@@ -1,0 +1,7 @@
+COCINA BETA FASE 12
+
+Mejora: la importación por URL ahora tiene límite de espera de 18 segundos en el navegador para evitar bloqueos interminables.
+
+Despliegue: subir a un sitio BETA de Netlify mediante un flujo que publique netlify/functions; Netlify Drop puede no desplegar funciones.
+
+PENDIENTE: configurar Supabase secundario, autenticación, sincronización, almacenamiento de fotos y emisor programado push. No hay pruebas reales de teléfonos. No usar Supabase original.

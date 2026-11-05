@@ -1,0 +1,1 @@
+COCINA: 128 recetas disponibles sin iniciar sesión. Se quitaron de la interfaz el acceso por correo, la copia en la nube y la galería privada. Los perfiles e historiales siguen siendo locales en cada navegador; no hay sincronización automática entre dispositivos. Las imágenes desde URL dependen de la disponibilidad de las páginas externas. No se modifica Supabase.

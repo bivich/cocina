@@ -1,0 +1,13 @@
+COCINA BETA — FASE 11 (paquete verificable)
+
+Esta fase conserva la versión 10, corrige el texto del horario para no confundirlo con notificaciones activas, limita la función de importación a GET y actualiza la caché.
+
+Pruebas estáticas:
+  node tests/verificar.js
+  node --check netlify/functions/import-recipe.js
+  node --check sw.js
+
+Para desplegar la función de importación, usa despliegue de Netlify con build de funciones (repositorio conectado o Netlify CLI). Netlify Drop puede publicar solo archivos estáticos.
+
+NO está listo para declarar 100%: falta autenticación y sincronización con Supabase beta, almacenamiento remoto de fotos, emisor de push programado y pruebas en dispositivos.
+NUNCA ejecutes los archivos SQL en Supabase de producción.

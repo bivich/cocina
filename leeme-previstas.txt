@@ -1,0 +1,7 @@
+COCINA — VISTAS PREVIAS DESDE URL
+Las tarjetas con enlace web intentan mostrar la imagen publicada por la fuente.
+No es necesario subir fotografías. La función de Netlify consulta metadatos públicos.
+Algunas redes (Instagram, TikTok) pueden bloquear la consulta o la imagen; en ese caso se muestra portada de reserva.
+Las 71 recetas sin enlace no pueden obtener fotografía de una fuente inexistente.
+La función requiere un deploy en Netlify; abrir index.html localmente no basta.
+No se han alterado las tablas de Supabase ni los datos de los usuarios.

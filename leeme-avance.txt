@@ -1,0 +1,13 @@
+COCINA — AVANCE TÉCNICO (NO PUBLICAR)
+
+Correcciones en cloud.js:
+- Permite subir recetas nuevas que tienen seed_key local-* (antes se bloqueaban por la lógica del ID en algunas rutas).
+- Reintenta sincronizar recetas locales pendientes cuando se inicia sesión o se vuelve a cargar.
+- Evita duplicar las recetas remotas en memoria al actualizar la sesión.
+- Retira recetas remotas de otra sesión al cerrar sesión o cambiar de familia.
+
+LÍMITES IMPORTANTES:
+- No se ha probado en un navegador autenticado ni con Supabase real.
+- La carga de recetas locales no tiene idempotencia robusta entre dispositivos ni manejo transaccional de fallos; no usar como versión final.
+- Historial personal, migración de perfiles y notificaciones push programadas siguen pendientes.
+- No ejecutar esquemas beta incluidos en el proyecto sobre la base existente.

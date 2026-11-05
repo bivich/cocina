@@ -1,0 +1,10 @@
+COCINA BETA FASE 07 — PRUEBAS, NO PRODUCCIÓN
+
+Esta beta usa almacenamiento local y NO se conecta a Supabase original.
+Mejoras: importación por URL con límites de descarga, control de redirecciones, metadatos de foto más compatibles y prevención de doble clic al importar.
+
+IMPORTANTE: las funciones de Netlify NO se activan necesariamente al subir una carpeta con Netlify Drop. Despliega mediante un sitio conectado a repositorio con build de funciones.
+
+Pendiente: backend aislado para sincronización, fotos en nube, suscripciones web push, scheduler y pruebas reales con aplicación cerrada. No se puede garantizar push sin ese backend.
+
+NO subas este paquete al sitio original. Haz una copia de seguridad antes de actualizar la beta.

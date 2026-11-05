@@ -1,0 +1,2 @@
+Fase 09: se añadió un aviso claro de almacenamiento local y privacidad de imágenes externas.
+No es una versión final; no reemplazar producción. Ver ESTADO_Y_PRUEBAS.md.

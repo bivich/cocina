@@ -1,0 +1,12 @@
+COCINA BETA — FASE 08 (preparación de integración)
+
+Cambios realizados:
+- Service worker puede mostrar una notificación PUSH recibida de un servidor y abrir COCINA al tocarla.
+- Caché versionada para actualización del sitio beta.
+- Esquema SQL aislado para el SEGUNDO proyecto Supabase con políticas RLS por usuario autenticado.
+
+NO ESTÁN TERMINADOS NI PROBADOS: envío programado push con aplicación cerrada, autenticación y sincronización real, fotografías en Supabase Storage.
+El esquema SQL NO se ejecuta automáticamente y NO debe ejecutarse en producción.
+Para probar importación por URL, desplegar con flujo Netlify que construya netlify/functions (no Netlify Drop).
+No subir claves service_role, contraseñas ni VAPID privadas al navegador.
+No actualizar el sitio original; solo beta.

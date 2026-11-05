@@ -1,0 +1,11 @@
+COCINA - Integración inicial de Supabase (fase 13)
+
+NUEVO: iniciar sesión por enlace de correo y guardar/recuperar manualmente un respaldo privado usando la tabla EXISTENTE cocina_private_backups. No crea tablas ni modifica Supabase automáticamente. Se utiliza únicamente la clave pública.
+
+ANTES DE USAR:
+1. En Supabase > Authentication, habilitar correo OTP y configurar Site URL / Redirect URLs del sitio BETA de Netlify.
+2. Confirmar que cocina_private_backups tiene una restricción única en user_id; el guardado mediante upsert depende de ella.
+3. Mantener copia local exportada antes de recuperar datos de la nube.
+4. Rotar la clave secreta que se compartió anteriormente.
+
+LIMITACIONES: respaldo manual, no sincronización automática; fotos en base64 pueden exceder los límites del respaldo y aún no se suben a Storage. Push cerrado aún no funciona. No probado contra la base de datos real ni en celular. NO reemplazar producción.

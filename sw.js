@@ -1,0 +1,7 @@
+const CACHE='cocina-beta-local-static-v20';
+const ASSETS=['./','./index.html','./recetas.json','./cloud.js','./push-client.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('cocina-beta-local-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET'||new URL(r.url).origin!==self.location.origin)return;e.respondWith(fetch(r).then(res=>{if(res.ok&&ASSETS.some(p=>new URL(p,self.registration.scope).href===r.url)){const copy=res.clone();caches.open(CACHE).then(c=>c.put(r,copy))}return res}).catch(()=>caches.match(r)))});
+self.addEventListener('push',e=>{let data={};try{data=e.data?.json()||{}}catch{data={body:e.data?.text()||''}};e.waitUntil(self.registration.showNotification(String(data.title||'🍳 COCINA'),{body:String(data.body||'¡Es hora de cocinar!'),icon:'./icon-192.png',badge:'./icon-192.png',tag:'cocina-recordatorio',data:{url:'./'}}))});
+self.addEventListener('notificationclick',e=>{e.notification.close();e.waitUntil(clients.matchAll({type:'window',includeUncontrolled:true}).then(async windows=>{for(const w of windows){if(w.url.startsWith(self.registration.scope)){await w.focus();return}}await clients.openWindow(self.registration.scope)}))});
